@@ -1,0 +1,6 @@
+customer_id,customer_name,province,policy_id,claim_amount,claim_status,updated_at
+1001,Aarav Sharma,ON,POL-10001,1200.50,Approved,2026-01-10
+1002,Emma Wilson,BC,POL-10002,0.00,No Claim,2026-01-11
+1003,Liam Brown,ON,POL-10003,890.25,Pending,2026-01-12
+1004,Noah Taylor,AB,POL-10004,5000.00,Approved,2026-01-13
+1005,Sophia Martin,QC,POL-10005,300.75,Rejected,2026-01-14

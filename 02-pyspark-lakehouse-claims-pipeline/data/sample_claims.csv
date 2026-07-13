@@ -1,0 +1,6 @@
+claim_id,customer_id,province,claim_amount,claim_status,claim_date
+C001,1001,ON,1200.50,Approved,2026-01-10
+C002,1002,BC,0.00,No Claim,2026-01-11
+C003,1003,ON,890.25,Pending,2026-01-12
+C004,1004,AB,5000.00,Approved,2026-01-13
+C005,1005,QC,300.75,Rejected,2026-01-14

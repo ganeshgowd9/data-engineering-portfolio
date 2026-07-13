@@ -1,0 +1,45 @@
+{
+  "name": "pl_ingest_customer_claims_to_datalake",
+  "properties": {
+    "description": "ADF pipeline template for ingesting customer claims data into Azure Data Lake.",
+    "activities": [
+      {
+        "name": "Copy_Source_To_ADLS",
+        "type": "Copy",
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 60
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource"
+          },
+          "sink": {
+            "type": "DelimitedTextSink"
+          }
+        }
+      },
+      {
+        "name": "Execute_Validation_Notebook",
+        "type": "DatabricksNotebook",
+        "dependsOn": [
+          {
+            "activity": "Copy_Source_To_ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "notebookPath": "/Shared/validate_customer_claims"
+        }
+      }
+    ],
+    "annotations": [
+      "portfolio",
+      "data-engineering",
+      "azure"
+    ]
+  }
+}
